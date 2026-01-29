@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Miffy World (Speculative Archive)
 
-## Getting Started
+2087年、ミッフィーの著作権終了をきっかけに誕生した公共文化圏「Miffy World」を描く
+スペキュラティブデザインのWebサイトです。企業広告ではなく、未来の公共アーカイブ兼カルチャーポータルを想定しています。
 
-First, run the development server:
+## 起動方法
 
 ```bash
+npm i
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+`http://localhost:3000` を開いてください。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ルーティング
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `/` トップ
+- `/about` About
+- `/history` History
+- `/world-map` World Map
+- `/projects` Projects
+- `/create` Create
+- `/archive` Archive
+- `/research` Research
+- `/ethics` Ethics
+- `/join` Join
 
-## Learn More
+## 主な構成
 
-To learn more about Next.js, take a look at the following resources:
+- `src/app` ルーティングとページ
+- `src/components` UIコンポーネント
+- `src/data` 年表・都市・倫理などのデータ
+- `public` 画像やアイコン（必要に応じて差し替え）
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## カスタム方法
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- データを差し替える  
+  `src/data` 以下の配列を編集してください。
+- 配色・タイポを変更する  
+  `src/app/globals.css` のCSS変数と `src/app/layout.tsx` のフォント設定を調整。
+- 3D演出を拡張する  
+  `src/components/HeroScene.tsx` / `src/components/WorldMapGlobe.tsx` を編集。

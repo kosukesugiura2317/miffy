@@ -1,0 +1,190 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #ffffff;
+  --ink: #1b1b1b;
+  --muted: #5f6b7a;
+  --line: #dde4ea;
+  --blue: #bfe7ff;
+  --yellow: #fff2a6;
+  --orange: #ffd1ad;
+  --green: #cfead2;
+  --night: #0a1a2b;
+  --night-ink: #eff4ff;
+  --night-line: #2b3a4d;
+  --glow: #9fe3ff;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-blue: var(--blue);
+  --color-yellow: var(--yellow);
+  --color-orange: var(--orange);
+  --color-green: var(--green);
+  --color-night: var(--night);
+  --color-night-ink: var(--night-ink);
+  --color-night-line: var(--night-line);
+  --color-glow: var(--glow);
+  --font-sans: var(--font-body);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body), sans-serif;
+  letter-spacing: 0.01em;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 0.2em;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+:focus-visible {
+  outline: 2px solid #1a4e7a;
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  z-index: 50;
+  padding: 0.6rem 0.9rem;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 2px solid #1a4e7a;
+  transition: transform 0.2s ease, top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid var(--line);
+  box-shadow: 0 10px 30px rgba(31, 60, 94, 0.08);
+}
+
+.soft-card {
+  border: 2px solid var(--line);
+  border-radius: 24px;
+  background: #ffffff;
+}
+
+.rounded-blob {
+  border-radius: 40px;
+}
+
+.font-rounded {
+  font-family: var(--font-rounded), sans-serif;
+}
+
+.font-tech {
+  font-family: var(--font-tech), monospace;
+  letter-spacing: 0.14em;
+}
+
+.noise-layer {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='1' stitchTiles='stitch'/></filter><rect width='140' height='140' filter='url(%23n)' opacity='0.25'/></svg>");
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.outline-bold {
+  border: 3px solid var(--ink);
+}
+
+.hover-pop:hover {
+  transform: translateY(-2px);
+}
+
+.hero-sky {
+  background: linear-gradient(180deg, #e7f6ff 0%, #ffffff 55%);
+}
+
+.night-mode body,
+body.night-mode {
+  background: var(--night);
+  color: var(--night-ink);
+}
+
+body.night-mode a {
+  color: var(--night-ink);
+}
+
+body.night-mode .glass-panel,
+body.night-mode .soft-card {
+  background: rgba(13, 29, 49, 0.92);
+  border-color: var(--night-line);
+  box-shadow: 0 20px 40px rgba(7, 12, 20, 0.4);
+}
+
+body.night-mode {
+  --bg: var(--night);
+  --ink: var(--night-ink);
+  --line: var(--night-line);
+}
+
+body.night-mode .outline-bold {
+  border-color: var(--glow);
+  box-shadow: 0 0 14px rgba(159, 227, 255, 0.5);
+}
+
+body.night-mode .hero-sky {
+  background: radial-gradient(circle at 30% 20%, #1a3a5e, #0a1a2b);
+}
+
+.starfield {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  background-image: radial-gradient(
+      1px 1px at 20px 30px,
+      rgba(255, 255, 255, 0.6),
+      transparent
+    ),
+    radial-gradient(1px 1px at 120px 80px, rgba(255, 255, 255, 0.5), transparent),
+    radial-gradient(1px 1px at 220px 40px, rgba(255, 255, 255, 0.4), transparent);
+  background-size: 260px 140px;
+}
+
+body.night-mode .starfield {
+  opacity: 1;
+}
+
+.animate-spin-slow {
+  animation: spinSlow 26s linear infinite;
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,10 @@
+<svg width="720" height="520" viewBox="0 0 720 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="720" height="520" rx="32" fill="#EDEAE4"/>
+  <rect x="56" y="60" width="260" height="28" rx="14" fill="#C7CBC6"/>
+  <rect x="56" y="108" width="360" height="12" rx="6" fill="#D6D2CC"/>
+  <rect x="56" y="130" width="300" height="12" rx="6" fill="#D6D2CC"/>
+  <rect x="56" y="152" width="220" height="12" rx="6" fill="#D6D2CC"/>
+  <rect x="56" y="210" width="608" height="230" rx="24" fill="#D9D6D0"/>
+  <path d="M92 408C152 360 216 344 276 372C336 400 412 432 488 360C564 288 620 284 664 320" stroke="#B0B6B0" stroke-width="5" stroke-linecap="round"/>
+  <text x="60" y="86" font-size="12" font-family="sans-serif" fill="#6A6E6A">CAMPUS RECORD</text>
+</svg>
