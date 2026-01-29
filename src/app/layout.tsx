@@ -5,13 +5,13 @@ import "./globals.css";
 
 const bodyFont = Kiwi_Maru({
   variable: "--font-body",
-  subsets: ["latin", "japanese"],
+  subsets: ["latin"],
   weight: ["300", "400", "500"],
 });
 
 const roundedFont = M_PLUS_Rounded_1c({
   variable: "--font-rounded",
-  subsets: ["latin", "japanese"],
+  subsets: ["latin"],
   weight: ["400", "500", "700"],
 });
 
