@@ -86,6 +86,7 @@ export default function MiffyScene({ modelPath }: MiffySceneProps) {
   const [messageIndex, setMessageIndex] = useState(0);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const { started } = useStart();
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
   const messages = [
     "ミッフィーは、公共文化の案内役です。",
     "世界中の都市が、物語の舞台になりました。",
@@ -110,7 +111,7 @@ export default function MiffyScene({ modelPath }: MiffySceneProps) {
     <div className="relative h-[100svh] w-full overflow-hidden bg-white">
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url(/images/miffy-bg.jpg)" }}
+        style={{ backgroundImage: `url(${basePath}/images/miffy-bg.jpg)` }}
         aria-hidden
       />
       <Canvas
@@ -146,7 +147,7 @@ export default function MiffyScene({ modelPath }: MiffySceneProps) {
           {messages[messageIndex]}
         </p>
       </div>
-      <audio ref={audioRef} src="/audio/theme.mp3" loop playsInline />
+      <audio ref={audioRef} src={`${basePath}/audio/theme.mp3`} loop playsInline />
     </div>
   );
 }
